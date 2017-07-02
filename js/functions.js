@@ -81,7 +81,7 @@ function startHeartAnimation() {
         return this
     }
 })(jQuery);
-function timeElapse(c) {
+function timeElapse(c, flag) {
     var e = Date();
     var f = (Date.parse(e) - Date.parse(c)) / 1000;
     var g = Math.floor(f / (3600 * 24));
@@ -99,7 +99,12 @@ function timeElapse(c) {
     if (f < 10) {
         f = -f
     }
-    var a = '<span class="digit">倒计时' + (-1 - g) + '</span> 天 <span class="digit">' + b + '</span> 小时 <span class="digit">' + d + '</span> 分钟 <span class="digit">' + f + "</span> 秒";
+    var a;
+    if (flag) {
+        a = '<span class="digit">Happy Birthday!</span>';
+    } else {
+        a = '<span class="digit">生日倒计时' + (-1 - g) + '</span> 天 <span class="digit">' + b + '</span> 小时 <span class="digit">' + d + '</span> 分钟 <span class="digit">' + f + "</span> 秒";
+    }
     $("#elapseClock").html(a)
 }
 function showMessages() {

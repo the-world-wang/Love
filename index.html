@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh" lang="zh">
 <head>
-	<title>Our Love Story</title>
+	<title>晴晴生日快乐</title>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<style type="text/css">
 		@font-face {
@@ -22,7 +22,7 @@
 				<span class="comments">/**</span><br />
 				<span class="space"/><span class="comments">* 大小姐晴晴,生日快乐!</span><br />
 				<span class="space"/><span class="comments">* 和你在一起的日子很开心,真希望一直这样下去</span><br />
-				<span class="space"/><span class="comments">* 我很挫!很笨!很多话都不知道怎么讲</span><br />
+				<span class="space"/><span class="comments">* 希望你永远18岁,永远开心</span><br />
 				<span class="space"/><span class="comments">* 我会一直把你当大小姐照顾的</span><br />
 				<span class="space"/><span class="comments">*/</span><br />
 				Boy i = <span class="keyword">new</span> Boy(<span class="string">"王浩"</span>);<br />
@@ -34,12 +34,11 @@
 				<canvas id="garden"></canvas>
 				<div id="words">
 					<div id="messages">
-						晴晴，生日快乐
+						晴晴
 						<div id="elapseClock"></div>
 					</div>
 					<div id="loveu">
-						永远爱你的<br/>
-						<div class="signature">- 学长</div>
+						<div class="signature">- 浩浩</div>
 					</div>
 				</div>
 			</div>
@@ -72,9 +71,10 @@
 				startHeartAnimation();
 			}, 5000);
 
-			timeElapse(together);
+            var flag = new Date().getTime() > together.getTime();
+			timeElapse(together, flag);
 			setInterval(function () {
-				timeElapse(together);
+				timeElapse(together, flag);
 			}, 500);
 
 			adjustCodePosition();
